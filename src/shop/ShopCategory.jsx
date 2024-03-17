@@ -11,7 +11,7 @@ const ShopCategory = ({ filterItem, setItem, menuItem, setProducts, selectedCate
                 {
                     menuItem.map((val, id) => {
                         return (
-                            <button className={`m-2 ${selectedCategory === "val" ? "bg-warning" : ""}`}
+                            <button className={`m-2 ${selectedCategory === val ? "bg-warning" : ""}`}
                                 key={id}
                                 onClick={() => filterItem(val)}
                             >
