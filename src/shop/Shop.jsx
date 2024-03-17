@@ -4,6 +4,7 @@ import Data from "../products.json"
 import ProductCards from './ProductCards'
 import Pagination from './Pagination'
 import Search from './Search'
+import ShopCategory from './ShopCategory'
 // import { Pagination } from 'react-bootstrap'
 
 const showResults = "Showing 01 - 12 of 139 Results"
@@ -20,6 +21,19 @@ const Shop = () => {
     const paginate = (pagenumber) => {
         setCurrentPage(pagenumber)
     }
+
+    const [selectedCategory, setSelectedCategory] = useState("All")
+    const menuItem = [...new Set(Data.map((val) => val.category))]
+
+    const filterItem = (curcat) => {
+        const newItem = Data.filter((newVal) => {
+            return newVal.category === curcat
+        })
+
+        setSelectedCategory(curcat)
+        setproducts(newItem)
+    }
+
     return (
         <div>
             <PageHeader title="Our Shop Page" curPage="Shop" />
@@ -54,6 +68,13 @@ const Shop = () => {
                         <div className='col-lg-4 col-12'>
                             <aside>
                                 <Search products={products} GridList={GridList} />
+                                <ShopCategory
+                                    filterItem={filterItem}
+                                    setItem={setproducts}
+                                    menuItem={menuItem}
+                                    setProducts={setproducts}
+                                    selectedCategory={selectedCategory}
+                                />
                             </aside>
                         </div>
                     </div>
