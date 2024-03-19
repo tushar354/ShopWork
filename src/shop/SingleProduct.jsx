@@ -5,6 +5,7 @@ import PageHeader from '../Components/PageHeader'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/css"
 import { Autoplay } from "swiper/modules"
+import ProductDisplay from './ProductDisplay'
 
 const SingleProduct = () => {
     const [product, setProduct] = useState([])
@@ -67,7 +68,7 @@ const SingleProduct = () => {
                                             <div className='post-content'>
                                                 <div>
                                                     {
-                                                        result.map(item => <p key={item.id}>{item.name}</p>)
+                                                        result.map(item => <ProductDisplay key={item.id} item={item} />)
                                                     }
                                                 </div>
                                             </div>
