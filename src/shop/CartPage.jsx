@@ -117,7 +117,7 @@ const CartPage = () => {
                             </table>
                         </div>
 
-                        <div className='cart-buttom'>
+                        <div className='cart-bottom'>
                             <div className='cart-checkout-box'>
                                 <form className='coupon'>
                                     <input className='cart-page-input-text' type='text' name='coupon' id='coupon' placeholder='Coupon Code...'>
@@ -127,9 +127,81 @@ const CartPage = () => {
                                 <form className='cart-checkout'>
                                     <input type="submit" value="Update Cart" />
                                     <div>
-
+                                        checkoutpage
                                     </div>
                                 </form>
+                            </div>
+
+                            <div className='shipping-box'>
+                                <div className='row'>
+                                    <div className='col-md-6 col-12'>
+                                        <div className='calculate-shiping'>
+                                            <h3>CalculateShipping</h3>
+                                            <div className='outline-select'>
+                                                <select>
+                                                    <option value="UK">United Kingdom</option>
+                                                    <option value="Ind">India</option>
+                                                    <option value="Np">Nepal</option>
+                                                    <option value="Pak">Pakistan</option>
+                                                </select>
+                                                <span className='select-icon'>
+                                                    <i className='icofont-rounded-down'></i>
+                                                </span>
+                                            </div>
+
+                                            <div className='outline-select shipping-select'>
+                                                <select>
+                                                    <option value="UK">New York</option>
+                                                    <option value="Ind">Delhi</option>
+                                                    <option value="Np">Bhutan</option>
+                                                    <option value="Pak">Lahor</option>
+                                                </select>
+                                                <span className='select-icon'>
+                                                    <i className='icofont-rounded-down'></i>
+                                                </span>
+                                            </div>
+                                            <input type='text' name='postalCode' id='postalCode' placeholder='Postcode/ZIP' className='cart-page-input-text' />
+                                            <button type='submit'> Update Adress</button>
+                                        </div>
+                                    </div>
+
+                                    <div className='col-md-6 col-12'>
+                                        <div className='cart-overview'>
+                                            <h3>
+                                                Cart Totals
+                                            </h3>
+                                            <ul className='lab-ul'>
+                                                <li>
+                                                    <span className='pull-left'>
+                                                        cart subtotal
+                                                    </span>
+                                                    <p className='pull-right'>
+                                                        ${cartSubtotal}
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <span className='pull-left'>
+                                                        shipping and handling
+                                                    </span>
+                                                    <p className='pull-right'>
+                                                        free shipping
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <span className='pull-left'>
+                                                        order total
+                                                    </span>
+                                                    <p className='pull-right'>
+                                                        ${orderTotal.toFixed(2)}
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
                             </div>
                         </div>
                     </div>
